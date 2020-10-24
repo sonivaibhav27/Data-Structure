@@ -1,17 +1,20 @@
 class Dequeue:
     def __init__(self,data):
         self.q = data
-    def addFront(self,data):
+    def addFront(self,data,returnList=False):
         self.q.insert(0,data)
+        if(returnList):
+            return self.q
     def addBack(self,data):
         self.q.append(data)
     def removeFirst(self):
         self.q.pop(0)
     def removeLast(self):
         self.q.pop()
-    def printQ(self):
+    def printQ(self,returnList=False):
         for i in self.q:
             print(i,sep="->")
+        return self.q
     def firstElement(self):
         return self.q[0]
     def lastElement(self):
