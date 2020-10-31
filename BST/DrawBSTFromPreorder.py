@@ -18,7 +18,10 @@ class BST:
                     temp =self.root
                     while temp.left:
                         temp=temp.left
-                    temp.left = Node(dataOfArr[i])
+                    if temp.data >  dataOfArr[i]:
+                        temp.left = Node(dataOfArr[i])
+                    else:
+                        temp.right = Node(dataOfArr[i])
             else:
                 if self.root.right is None:
                     self.root.right = Node(dataOfArr[i])
@@ -29,22 +32,8 @@ class BST:
                     temp.right = Node(dataOfArr[i])  
             i+=1
     def printTree(self):
-        temp = self.root
-        while temp:
-            if temp:
-                print(temp.data)
-                temp=temp.right
-            else:
-                break
-    def postorder(self):
-        while self.root:
-            print()
+        print(self.root.left.left.right.data)
         
-        
-    def _util(self,root):
-        
-        
-                
         
 # def inorder(root):
 #     if root:
